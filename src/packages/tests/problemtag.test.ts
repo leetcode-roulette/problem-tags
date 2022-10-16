@@ -18,3 +18,7 @@ afterEach((done) => {
 		mongoose.connection.close(() => done());
 	});
 });
+
+describe("Problemtag Package", () => {
+	test("test", () => {});
+});
