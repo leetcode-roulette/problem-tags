@@ -3,7 +3,7 @@ import express, { Application } from "express";
 import healthcheck from "./healthcheck";
 import Database from "./db/db.config";
 
-import ProblemTag from "./packages/ProblemTag/ProblemTag";
+import ProblemTag from "./packages/ProblemTag/Problemtag";
 config();
 
 export const app = (async () => {

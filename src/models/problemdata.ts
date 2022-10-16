@@ -31,7 +31,7 @@ const SolutionSchema: Schema<iSolution> = new Schema({
 	hasVideo: "boolean",
 });
 
-export interface IProblemData extends Document {
+export interface IProblemData {
 	problemID: number;
 	problemFrontendID: number;
 	title: string;
@@ -47,6 +47,8 @@ export interface IProblemData extends Document {
 	hints: string[];
 	solution: iSolution | null;
 }
+
+export interface ProblemDataDocument extends IProblemData, Document {}
 
 const ProblemDataSchema: Schema<IProblemData> = new mongoose.Schema({
 	problemID: { type: "number", unique: true, required: true },

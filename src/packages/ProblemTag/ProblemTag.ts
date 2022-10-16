@@ -1,22 +1,22 @@
 import { getProblemdatas } from "../../db/problemdata";
 import { IProblemData } from "../../models/problemdata";
-import ProblemTagDB from "../../db/ProblemTagDB";
+import ProblemtagDB from "../../db/ProblemtagDB";
 import { IProblemtag } from "../../models/problemtag";
 
-export default class ProblemTag {
+export default class Problemtag {
 	static problemdatas: IProblemData[] | undefined = undefined;
 
-	static async getProblemdatas() {
+	private static async getProblemdatas() {
 		if (!this.problemdatas) {
 			this.problemdatas = await getProblemdatas();
 		}
 		return this.problemdatas;
 	}
 
-	static async handleProblemData(problemData: IProblemData) {
-		problemData.tags.forEach((tag) => {
+	private static async handleProblemData(problemData: IProblemData) {
+		problemData.tags.forEach(async (tag) => {
 			const problemtag: IProblemtag = { problemID: problemData.problemID, tagSlug: tag.slug };
-			ProblemTagDB.insert(problemtag);
+			await ProblemtagDB.insert(problemtag);
 		});
 	}
 

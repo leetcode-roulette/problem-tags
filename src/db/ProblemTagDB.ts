@@ -2,7 +2,7 @@ import { FilterQuery } from "mongoose";
 import { IProblemtag, Problemtag } from "../models/problemtag";
 import { logger } from "../logger";
 
-export default class ProblemTagDB {
+export default class ProblemtagDB {
 	public static async insert(problemtagData: IProblemtag) {
 		const filter: FilterQuery<IProblemtag> = { ...problemtagData };
 
