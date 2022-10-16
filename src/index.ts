@@ -4,6 +4,7 @@ import healthcheck from "./healthcheck";
 import Database from "./db/db.config";
 
 import ProblemTag from "./packages/ProblemTag/Problemtag";
+import Tag from "./packages/Tag/Tag";
 config();
 
 export const app = (async () => {
@@ -11,7 +12,7 @@ export const app = (async () => {
 	const app: Application = express();
 	app.use("/", healthcheck);
 
-	//await Tag.start();
+	await Tag.start();
 	await ProblemTag.start();
 	return app;
 })();

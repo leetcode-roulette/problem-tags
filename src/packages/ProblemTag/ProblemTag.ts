@@ -2,6 +2,7 @@ import { getProblemdatas } from "../../db/problemdata";
 import { IProblemData } from "../../models/problemdata";
 import ProblemtagDB from "../../db/ProblemtagDB";
 import { IProblemtag } from "../../models/problemtag";
+import { logger } from "../../logger";
 
 export default class Problemtag {
 	static problemdatas: IProblemData[] | undefined = undefined;
@@ -29,5 +30,6 @@ export default class Problemtag {
 
 	public static async start() {
 		await this.createProblemtagCollection();
+		logger.info("Done with Problemtags");
 	}
 }
