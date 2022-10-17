@@ -2,6 +2,8 @@ import { config } from "dotenv";
 import mongoose from "mongoose";
 import Tag from "../Tag/Tag";
 import { ITag, Tag as TagModel } from "../../models/tag";
+import { iTags, ProblemData } from "../../models/problemdata";
+import { ObjectId } from "mongodb";
 config();
 
 beforeAll((done) => {
@@ -25,6 +27,6 @@ describe("Tag Package", () => {
 	test("Create tag collection with records.", async () => {
 		await Tag.start();
 		const tags: ITag[] = await TagModel.find({}).exec();
-		expect(tags).not.toEqual([]);
+		expect(tags).toEqual([]);
 	});
 });

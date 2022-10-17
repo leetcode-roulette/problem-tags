@@ -1,6 +1,6 @@
 import { getProblemdatas } from "../../db/problemdata";
 import { IProblemData } from "../../models/problemdata";
-import ProblemtagDB from "../../db/ProblemtagDB";
+import ProblemtagDB from "../../db/ProblemTagDB";
 import { IProblemtag } from "../../models/problemtag";
 import { logger } from "../../logger";
 

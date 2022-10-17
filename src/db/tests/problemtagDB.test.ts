@@ -1,7 +1,7 @@
 import { config } from "dotenv";
 import mongoose from "mongoose";
 import { IProblemtag, Problemtag } from "../../models/problemtag";
-import ProblemtagDB from "../ProblemtagDB";
+import ProblemtagDB from "../ProblemTagDB";
 config();
 
 beforeAll((done) => {

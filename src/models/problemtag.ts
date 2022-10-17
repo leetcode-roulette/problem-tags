@@ -10,4 +10,4 @@ const ProblemtagSchema: Schema<IProblemtag> = new Schema({
 	tagSlug: { type: "string", required: true },
 });
 
-export const Problemtag: Model<IProblemtag> = mongoose.model("problemtag", ProblemtagSchema);
+export const Problemtag: Model<IProblemtag> = mongoose.model("problemtags", ProblemtagSchema);

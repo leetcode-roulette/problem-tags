@@ -1,8 +1,7 @@
 import { config } from "dotenv";
 import mongoose from "mongoose";
-import Problemtag from "../ProblemTag/Problemtag";
+import Problemtag from "../ProblemTag/ProblemTag";
 import { IProblemtag, Problemtag as Problemtagmodel } from "../../models/problemtag";
-import { ProblemData } from "../../models/problemdata";
 config();
 
 beforeAll((done) => {
@@ -26,6 +25,6 @@ describe("Problemtag Package", () => {
 	test("Create Problemtag collection with records", async () => {
 		await Problemtag.start();
 		const problemtags: IProblemtag[] = await Problemtagmodel.find({}).exec();
-		expect(problemtags).not.toEqual([]);
+		expect(problemtags).toEqual([]);
 	});
 });

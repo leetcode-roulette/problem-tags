@@ -67,4 +67,4 @@ const ProblemDataSchema: Schema<IProblemData> = new mongoose.Schema({
 	solution: { type: SolutionSchema, default: null },
 });
 
-export const ProblemData: Model<IProblemData> = mongoose.model("problemData", ProblemDataSchema);
+export const ProblemData: Model<IProblemData> = mongoose.model("problemdatas", ProblemDataSchema);
